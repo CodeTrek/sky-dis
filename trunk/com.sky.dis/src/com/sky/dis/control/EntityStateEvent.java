@@ -3,8 +3,14 @@ package com.sky.dis.control;
 import edu.nps.moves.dis.FastEntityStatePdu;
 
 public class EntityStateEvent implements DisPduEvent {
+    
+    private FastEntityStatePdu pdu;
 
-    public EntityStateEvent(FastEntityStatePdu pdu) {
-        System.out.println("Entity: " + pdu.getSite() + "." + pdu.getExerciseID() + "." + pdu.getEntity());
+    EntityStateEvent(FastEntityStatePdu pdu) {
+        this.pdu = pdu;
+    }
+    
+    FastEntityStatePdu getPdu() {
+        return pdu;
     }
 }
