@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: edu.nps.moves.dis
+Bundle-SymbolicName: edu.nps.moves.dis
+Bundle-Version: 1.0.0
+Bundle-Vendor: edu.nps.moves
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: edu.nps.moves.dis,
+ edu.nps.moves.disenum,
+ edu.nps.moves.disutil,
+ edu.nps.moves.math,
+ edu.nps.moves.siso,
+ oss.jcg.disviz.math
