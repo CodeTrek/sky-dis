@@ -10,6 +10,7 @@ import com.sky.dis.control.DisControl;
 import com.sky.dis.model.EditingDomain;
 import com.sky.dis.model.TheWorld;
 import com.sky.dis.preferences.PreferenceConstants;
+import com.sky.dis.scene.Scene;
 
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 
@@ -32,6 +33,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
     private void initializeSingletons() {
         TheWorld.getInstance();
         EditingDomain.getInstance();
+        Scene.getInstance();
     }
 
     @Override
