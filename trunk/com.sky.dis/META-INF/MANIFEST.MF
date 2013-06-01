@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.sky.dis
+Bundle-SymbolicName: com.sky.dis;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: com.sky.dis.Activator
+Bundle-Vendor: Jay C. Graham
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.console;bundle-version="3.5.100",
+ edu.nps.moves.dis;bundle-version="1.0.0",
+ com.sky.wwj;bundle-version="1.0.0",
+ com.sky.dis.om.rpr;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
