@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.sky.dis.om.rpr/src" editDirectory="/com.sky.dis.om.rpr.edit/src"
+    editorDirectory="/com.sky.dis.om.rpr.editor/src" modelPluginID="com.sky.dis.om.rpr"
+    templateDirectory="" modelName="Rpr" editPluginClass="com.sky.dis.om.rpr.provider.RprEditPlugin"
+    editorPluginClass="com.sky.dis.om.rpr.presentation.RprEditorPlugin" testSuiteClass="com.sky.dis.om.rpr.tests.RprAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    editPluginID="com.sky.dis.om.rpr.edit" editorPluginID="com.sky.dis.om.rpr.editor"
+    runtimePlatform="RCP">
+  <foreignModel>rpr.ecore</foreignModel>
+  <genPackages prefix="Rpr" basePackage="com.sky.dis.om" disposableProviderFactory="true"
+      multipleEditorPages="false" ecorePackage="rpr.ecore#/">
+    <genClasses ecoreClass="rpr.ecore#//World">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpr.ecore#//World/entities"/>
+    </genClasses>
+    <genClasses ecoreClass="rpr.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpr.ecore#//Entity/entityId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpr.ecore#//Entity/worldLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpr.ecore#//Entity/orientation"/>
+    </genClasses>
+    <genClasses ecoreClass="rpr.ecore#//EntityId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//EntityId/site"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//EntityId/host"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//EntityId/application"/>
+    </genClasses>
+    <genClasses ecoreClass="rpr.ecore#//WorldLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//WorldLocation/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//WorldLocation/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//WorldLocation/z"/>
+    </genClasses>
+    <genClasses ecoreClass="rpr.ecore#//Orientation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//Orientation/heading"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//Orientation/pitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//Orientation/roll"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

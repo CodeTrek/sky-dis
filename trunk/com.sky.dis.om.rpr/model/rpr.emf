@@ -1,0 +1,31 @@
+@namespace(uri="htp:///com/sky/dis/om/rpr.ecore/1.0", prefix="com.sky.dis.om.rpr")
+package rpr;
+
+class World {
+  val Entity[*] entities;
+}
+
+class Entity {
+  val EntityId[1] entityId;
+  val WorldLocation[1] worldLocation;
+  val Orientation[1] orientation;
+}
+
+class EntityId {
+  attr short site;
+  attr short host;
+  attr short application;
+}
+
+class WorldLocation {
+  attr double[1] x;
+  attr double[1] y;
+  attr double[1] z;
+}
+
+class Orientation {
+  attr float[1] heading;
+  attr float[1] pitch;
+  attr float[1] roll;
+}
+
