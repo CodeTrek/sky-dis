@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension
+         point="org.eclipse.core.runtime.applications"
+         id="RprEditorAdvisorApplication">
+      <application>
+         <run class="com.sky.dis.om.rpr.presentation.RprEditorAdvisor$Application"/>
+      </application>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectives">
+      <perspective
+            name="%_UI_Perspective_label"
+            class="com.sky.dis.om.rpr.presentation.RprEditorAdvisor$Perspective"
+            id="com.sky.dis.om.rpr.presentation.RprEditorAdvisorPerspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <command
+            name="%_UI_Menu_OpenURI_label"
+            description="%_UI_Menu_OpenURI_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="com.sky.dis.om.rpr.presentation.RprEditorAdvisorOpenURICommand"/>
+      <command
+            name="%_UI_Menu_Open_label"
+            description="%_UI_Menu_Open_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="com.sky.dis.om.rpr.presentation.RprEditorAdvisorOpenCommand"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.sky.dis.om.rpr.presentation.RprEditorAdvisorOpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="com.sky.dis.om.rpr.presentation.RprEditorAdvisorOpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="%_UI_RprEditorAdvisor_ActionSet_label"
+            visible="true"
+            id="RprEditorAdvisorActionSet">
+         <action
+               label="%_UI_Menu_About_label"
+               class="com.sky.dis.om.rpr.presentation.RprEditorAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="com.sky.dis.om.rpr.presentation.RprEditorAdvisorAboutAction"/>
+         <action
+               label="%_UI_Menu_OpenURI_label"
+               definitionId="com.sky.dis.om.rpr.presentation.RprEditorAdvisorOpenURICommand"
+               class="com.sky.dis.om.rpr.presentation.RprEditorAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="com.sky.dis.om.rpr.presentation.RprEditorAdvisorOpenURIAction"/>
+         <action
+               label="%_UI_Menu_Open_label"
+               definitionId="com.sky.dis.om.rpr.presentation.RprEditorAdvisorOpenCommand"
+               class="com.sky.dis.om.rpr.presentation.RprEditorAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="com.sky.dis.om.rpr.presentation.RprEditorAdvisorOpenAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="%_UI_RprModelWizard_ActionSet_label"
+            visible="true"
+            id="com.sky.dis.om.rpr.presentation.RprActionBarContributorActionSet">
+         <action
+               label="%_UI_RprModelWizard_label"
+               class="com.sky.dis.om.rpr.presentation.RprActionBarContributor$NewAction"
+               menubarPath="file/new/additions"
+               id="com.sky.dis.om.rpr.presentation.RprActionBarContributorNewAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="com.sky.dis.om.rpr.presentation.RprEditorID"
+            name="%_UI_RprEditor_label"
+            icon="icons/full/obj16/RprModelFile.gif"
+            extensions="rpr"
+            class="com.sky.dis.om.rpr.presentation.RprEditor"
+            contributorClass="com.sky.dis.om.rpr.presentation.RprActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
