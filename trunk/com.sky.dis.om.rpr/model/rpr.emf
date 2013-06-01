@@ -14,7 +14,7 @@ class Entity {
 class EntityId {
   attr short site;
   attr short host;
-  attr short application;
+  attr short entityId;
 }
 
 class WorldLocation {

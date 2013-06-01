@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link com.sky.dis.om.rpr.impl.EntityIdImpl#getSite <em>Site</em>}</li>
  *   <li>{@link com.sky.dis.om.rpr.impl.EntityIdImpl#getHost <em>Host</em>}</li>
- *   <li>{@link com.sky.dis.om.rpr.impl.EntityIdImpl#getApplication <em>Application</em>}</li>
+ *   <li>{@link com.sky.dis.om.rpr.impl.EntityIdImpl#getEntityId <em>Entity Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,24 +69,24 @@ public class EntityIdImpl extends EObjectImpl implements EntityId {
     protected short host = HOST_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getApplication() <em>Application</em>}' attribute.
+     * The default value of the '{@link #getEntityId() <em>Entity Id</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getApplication()
+     * @see #getEntityId()
      * @generated
      * @ordered
      */
-    protected static final short APPLICATION_EDEFAULT = 0;
+    protected static final short ENTITY_ID_EDEFAULT = 0;
 
     /**
-     * The cached value of the '{@link #getApplication() <em>Application</em>}' attribute.
+     * The cached value of the '{@link #getEntityId() <em>Entity Id</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getApplication()
+     * @see #getEntityId()
      * @generated
      * @ordered
      */
-    protected short application = APPLICATION_EDEFAULT;
+    protected short entityId = ENTITY_ID_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -154,8 +154,8 @@ public class EntityIdImpl extends EObjectImpl implements EntityId {
      * <!-- end-user-doc -->
      * @generated
      */
-    public short getApplication() {
-        return application;
+    public short getEntityId() {
+        return entityId;
     }
 
     /**
@@ -163,11 +163,11 @@ public class EntityIdImpl extends EObjectImpl implements EntityId {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setApplication(short newApplication) {
-        short oldApplication = application;
-        application = newApplication;
+    public void setEntityId(short newEntityId) {
+        short oldEntityId = entityId;
+        entityId = newEntityId;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, RprPackage.ENTITY_ID__APPLICATION, oldApplication, application));
+            eNotify(new ENotificationImpl(this, Notification.SET, RprPackage.ENTITY_ID__ENTITY_ID, oldEntityId, entityId));
     }
 
     /**
@@ -182,8 +182,8 @@ public class EntityIdImpl extends EObjectImpl implements EntityId {
                 return getSite();
             case RprPackage.ENTITY_ID__HOST:
                 return getHost();
-            case RprPackage.ENTITY_ID__APPLICATION:
-                return getApplication();
+            case RprPackage.ENTITY_ID__ENTITY_ID:
+                return getEntityId();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -202,8 +202,8 @@ public class EntityIdImpl extends EObjectImpl implements EntityId {
             case RprPackage.ENTITY_ID__HOST:
                 setHost((Short)newValue);
                 return;
-            case RprPackage.ENTITY_ID__APPLICATION:
-                setApplication((Short)newValue);
+            case RprPackage.ENTITY_ID__ENTITY_ID:
+                setEntityId((Short)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -223,8 +223,8 @@ public class EntityIdImpl extends EObjectImpl implements EntityId {
             case RprPackage.ENTITY_ID__HOST:
                 setHost(HOST_EDEFAULT);
                 return;
-            case RprPackage.ENTITY_ID__APPLICATION:
-                setApplication(APPLICATION_EDEFAULT);
+            case RprPackage.ENTITY_ID__ENTITY_ID:
+                setEntityId(ENTITY_ID_EDEFAULT);
                 return;
         }
         super.eUnset(featureID);
@@ -242,8 +242,8 @@ public class EntityIdImpl extends EObjectImpl implements EntityId {
                 return site != SITE_EDEFAULT;
             case RprPackage.ENTITY_ID__HOST:
                 return host != HOST_EDEFAULT;
-            case RprPackage.ENTITY_ID__APPLICATION:
-                return application != APPLICATION_EDEFAULT;
+            case RprPackage.ENTITY_ID__ENTITY_ID:
+                return entityId != ENTITY_ID_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }
@@ -262,8 +262,8 @@ public class EntityIdImpl extends EObjectImpl implements EntityId {
         result.append(site);
         result.append(", host: ");
         result.append(host);
-        result.append(", application: ");
-        result.append(application);
+        result.append(", entityId: ");
+        result.append(entityId);
         result.append(')');
         return result.toString();
     }

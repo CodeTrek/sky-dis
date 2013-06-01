@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.sky.dis.om.rpr.EntityId#getSite <em>Site</em>}</li>
  *   <li>{@link com.sky.dis.om.rpr.EntityId#getHost <em>Host</em>}</li>
- *   <li>{@link com.sky.dis.om.rpr.EntityId#getApplication <em>Application</em>}</li>
+ *   <li>{@link com.sky.dis.om.rpr.EntityId#getEntityId <em>Entity Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,29 +76,29 @@ public interface EntityId extends EObject {
     void setHost(short value);
 
     /**
-     * Returns the value of the '<em><b>Application</b></em>' attribute.
+     * Returns the value of the '<em><b>Entity Id</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Application</em>' attribute isn't clear,
+     * If the meaning of the '<em>Entity Id</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Application</em>' attribute.
-     * @see #setApplication(short)
-     * @see com.sky.dis.om.rpr.RprPackage#getEntityId_Application()
+     * @return the value of the '<em>Entity Id</em>' attribute.
+     * @see #setEntityId(short)
+     * @see com.sky.dis.om.rpr.RprPackage#getEntityId_EntityId()
      * @model
      * @generated
      */
-    short getApplication();
+    short getEntityId();
 
     /**
-     * Sets the value of the '{@link com.sky.dis.om.rpr.EntityId#getApplication <em>Application</em>}' attribute.
+     * Sets the value of the '{@link com.sky.dis.om.rpr.EntityId#getEntityId <em>Entity Id</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Application</em>' attribute.
-     * @see #getApplication()
+     * @param value the new value of the '<em>Entity Id</em>' attribute.
+     * @see #getEntityId()
      * @generated
      */
-    void setApplication(short value);
+    void setEntityId(short value);
 
 } // EntityId

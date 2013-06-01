@@ -21,7 +21,7 @@
     <genClasses ecoreClass="rpr.ecore#//EntityId">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//EntityId/site"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//EntityId/host"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//EntityId/application"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//EntityId/entityId"/>
     </genClasses>
     <genClasses ecoreClass="rpr.ecore#//WorldLocation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//WorldLocation/x"/>

@@ -62,7 +62,7 @@ public class EntityIdItemProvider
 
             addSitePropertyDescriptor(object);
             addHostPropertyDescriptor(object);
-            addApplicationPropertyDescriptor(object);
+            addEntityIdPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -112,19 +112,19 @@ public class EntityIdItemProvider
     }
 
     /**
-     * This adds a property descriptor for the Application feature.
+     * This adds a property descriptor for the Entity Id feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addApplicationPropertyDescriptor(Object object) {
+    protected void addEntityIdPropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_EntityId_application_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_EntityId_application_feature", "_UI_EntityId_type"),
-                 RprPackage.Literals.ENTITY_ID__APPLICATION,
+                 getString("_UI_EntityId_entityId_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_EntityId_entityId_feature", "_UI_EntityId_type"),
+                 RprPackage.Literals.ENTITY_ID__ENTITY_ID,
                  true,
                  false,
                  false,
@@ -170,7 +170,7 @@ public class EntityIdItemProvider
         switch (notification.getFeatureID(EntityId.class)) {
             case RprPackage.ENTITY_ID__SITE:
             case RprPackage.ENTITY_ID__HOST:
-            case RprPackage.ENTITY_ID__APPLICATION:
+            case RprPackage.ENTITY_ID__ENTITY_ID:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

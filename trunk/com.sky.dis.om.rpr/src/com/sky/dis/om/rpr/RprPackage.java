@@ -158,13 +158,13 @@ public interface RprPackage extends EPackage {
     int ENTITY_ID__HOST = 1;
 
     /**
-     * The feature id for the '<em><b>Application</b></em>' attribute.
+     * The feature id for the '<em><b>Entity Id</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ENTITY_ID__APPLICATION = 2;
+    int ENTITY_ID__ENTITY_ID = 2;
 
     /**
      * The number of structural features of the '<em>Entity Id</em>' class.
@@ -365,15 +365,15 @@ public interface RprPackage extends EPackage {
     EAttribute getEntityId_Host();
 
     /**
-     * Returns the meta object for the attribute '{@link com.sky.dis.om.rpr.EntityId#getApplication <em>Application</em>}'.
+     * Returns the meta object for the attribute '{@link com.sky.dis.om.rpr.EntityId#getEntityId <em>Entity Id</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Application</em>'.
-     * @see com.sky.dis.om.rpr.EntityId#getApplication()
+     * @return the meta object for the attribute '<em>Entity Id</em>'.
+     * @see com.sky.dis.om.rpr.EntityId#getEntityId()
      * @see #getEntityId()
      * @generated
      */
-    EAttribute getEntityId_Application();
+    EAttribute getEntityId_EntityId();
 
     /**
      * Returns the meta object for class '{@link com.sky.dis.om.rpr.WorldLocation <em>World Location</em>}'.
@@ -562,12 +562,12 @@ public interface RprPackage extends EPackage {
         EAttribute ENTITY_ID__HOST = eINSTANCE.getEntityId_Host();
 
         /**
-         * The meta object literal for the '<em><b>Application</b></em>' attribute feature.
+         * The meta object literal for the '<em><b>Entity Id</b></em>' attribute feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EAttribute ENTITY_ID__APPLICATION = eINSTANCE.getEntityId_Application();
+        EAttribute ENTITY_ID__ENTITY_ID = eINSTANCE.getEntityId_EntityId();
 
         /**
          * The meta object literal for the '{@link com.sky.dis.om.rpr.impl.WorldLocationImpl <em>World Location</em>}' class.

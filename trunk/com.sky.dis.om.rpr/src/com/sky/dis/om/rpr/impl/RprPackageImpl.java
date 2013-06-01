@@ -206,7 +206,7 @@ public class RprPackageImpl extends EPackageImpl implements RprPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EAttribute getEntityId_Application() {
+    public EAttribute getEntityId_EntityId() {
         return (EAttribute)entityIdEClass.getEStructuralFeatures().get(2);
     }
 
@@ -321,7 +321,7 @@ public class RprPackageImpl extends EPackageImpl implements RprPackage {
         entityIdEClass = createEClass(ENTITY_ID);
         createEAttribute(entityIdEClass, ENTITY_ID__SITE);
         createEAttribute(entityIdEClass, ENTITY_ID__HOST);
-        createEAttribute(entityIdEClass, ENTITY_ID__APPLICATION);
+        createEAttribute(entityIdEClass, ENTITY_ID__ENTITY_ID);
 
         worldLocationEClass = createEClass(WORLD_LOCATION);
         createEAttribute(worldLocationEClass, WORLD_LOCATION__X);
@@ -375,7 +375,7 @@ public class RprPackageImpl extends EPackageImpl implements RprPackage {
         initEClass(entityIdEClass, EntityId.class, "EntityId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getEntityId_Site(), ecorePackage.getEShort(), "site", null, 0, 1, EntityId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getEntityId_Host(), ecorePackage.getEShort(), "host", null, 0, 1, EntityId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEAttribute(getEntityId_Application(), ecorePackage.getEShort(), "application", null, 0, 1, EntityId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getEntityId_EntityId(), ecorePackage.getEShort(), "entityId", null, 0, 1, EntityId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(worldLocationEClass, WorldLocation.class, "WorldLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getWorldLocation_X(), ecorePackage.getEDouble(), "x", null, 1, 1, WorldLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
