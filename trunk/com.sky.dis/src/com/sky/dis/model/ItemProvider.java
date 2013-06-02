@@ -36,7 +36,6 @@ public class ItemProvider {
 
         TransactionalAdapterFactoryContentProvider contentProvider = new TransactionalAdapterFactoryContentProvider(ed,
                         adapterFactory);
-        
 
         return contentProvider;
     }
