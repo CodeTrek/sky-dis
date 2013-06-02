@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.sky.dis.om.rpr.WorldLocation#getX <em>X</em>}</li>
  *   <li>{@link com.sky.dis.om.rpr.WorldLocation#getY <em>Y</em>}</li>
  *   <li>{@link com.sky.dis.om.rpr.WorldLocation#getZ <em>Z</em>}</li>
+ *   <li>{@link com.sky.dis.om.rpr.WorldLocation#getEcefString <em>Ecef String</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,5 +101,20 @@ public interface WorldLocation extends EObject {
      * @generated
      */
     void setZ(double value);
+
+    /**
+     * Returns the value of the '<em><b>Ecef String</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Ecef String</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Ecef String</em>' attribute.
+     * @see com.sky.dis.om.rpr.RprPackage#getWorldLocation_EcefString()
+     * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+     * @generated
+     */
+    String getEcefString();
 
 } // WorldLocation

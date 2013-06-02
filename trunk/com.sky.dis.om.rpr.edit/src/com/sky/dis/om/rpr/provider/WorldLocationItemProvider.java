@@ -63,6 +63,7 @@ public class WorldLocationItemProvider
             addXPropertyDescriptor(object);
             addYPropertyDescriptor(object);
             addZPropertyDescriptor(object);
+            addEcefStringPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -134,6 +135,28 @@ public class WorldLocationItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Ecef String feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addEcefStringPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_WorldLocation_ecefString_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_WorldLocation_ecefString_feature", "_UI_WorldLocation_type"),
+                 RprPackage.Literals.WORLD_LOCATION__ECEF_STRING,
+                 false,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This returns WorldLocation.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -152,8 +175,10 @@ public class WorldLocationItemProvider
      */
     @Override
     public String getText(Object object) {
-        WorldLocation worldLocation = (WorldLocation)object;
-        return getString("_UI_WorldLocation_type") + " " + worldLocation.getX();
+        String label = ((WorldLocation)object).getEcefString();
+        return label == null || label.length() == 0 ?
+            getString("_UI_WorldLocation_type") :
+            getString("_UI_WorldLocation_type") + " " + label;
     }
 
     /**
@@ -171,6 +196,7 @@ public class WorldLocationItemProvider
             case RprPackage.WORLD_LOCATION__X:
             case RprPackage.WORLD_LOCATION__Y:
             case RprPackage.WORLD_LOCATION__Z:
+            case RprPackage.WORLD_LOCATION__ECEF_STRING:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

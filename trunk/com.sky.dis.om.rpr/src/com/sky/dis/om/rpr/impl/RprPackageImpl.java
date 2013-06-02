@@ -179,6 +179,15 @@ public class RprPackageImpl extends EPackageImpl implements RprPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getEntity_Name() {
+        return (EAttribute)entityEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getEntityId() {
         return entityIdEClass;
     }
@@ -244,6 +253,15 @@ public class RprPackageImpl extends EPackageImpl implements RprPackage {
      */
     public EAttribute getWorldLocation_Z() {
         return (EAttribute)worldLocationEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getWorldLocation_EcefString() {
+        return (EAttribute)worldLocationEClass.getEStructuralFeatures().get(3);
     }
 
     /**
@@ -317,6 +335,7 @@ public class RprPackageImpl extends EPackageImpl implements RprPackage {
         createEReference(entityEClass, ENTITY__ENTITY_ID);
         createEReference(entityEClass, ENTITY__WORLD_LOCATION);
         createEReference(entityEClass, ENTITY__ORIENTATION);
+        createEAttribute(entityEClass, ENTITY__NAME);
 
         entityIdEClass = createEClass(ENTITY_ID);
         createEAttribute(entityIdEClass, ENTITY_ID__SITE);
@@ -327,6 +346,7 @@ public class RprPackageImpl extends EPackageImpl implements RprPackage {
         createEAttribute(worldLocationEClass, WORLD_LOCATION__X);
         createEAttribute(worldLocationEClass, WORLD_LOCATION__Y);
         createEAttribute(worldLocationEClass, WORLD_LOCATION__Z);
+        createEAttribute(worldLocationEClass, WORLD_LOCATION__ECEF_STRING);
 
         orientationEClass = createEClass(ORIENTATION);
         createEAttribute(orientationEClass, ORIENTATION__HEADING);
@@ -371,6 +391,7 @@ public class RprPackageImpl extends EPackageImpl implements RprPackage {
         initEReference(getEntity_EntityId(), this.getEntityId(), null, "entityId", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getEntity_WorldLocation(), this.getWorldLocation(), null, "worldLocation", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getEntity_Orientation(), this.getOrientation(), null, "orientation", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 1, 1, Entity.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
         initEClass(entityIdEClass, EntityId.class, "EntityId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getEntityId_Site(), ecorePackage.getEShort(), "site", null, 0, 1, EntityId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -381,6 +402,7 @@ public class RprPackageImpl extends EPackageImpl implements RprPackage {
         initEAttribute(getWorldLocation_X(), ecorePackage.getEDouble(), "x", null, 1, 1, WorldLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getWorldLocation_Y(), ecorePackage.getEDouble(), "y", null, 1, 1, WorldLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getWorldLocation_Z(), ecorePackage.getEDouble(), "z", null, 1, 1, WorldLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getWorldLocation_EcefString(), ecorePackage.getEString(), "ecefString", null, 1, 1, WorldLocation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
         initEClass(orientationEClass, Orientation.class, "Orientation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getOrientation_Heading(), ecorePackage.getEFloat(), "heading", null, 1, 1, Orientation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

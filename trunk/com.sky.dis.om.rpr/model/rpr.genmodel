@@ -9,7 +9,7 @@
     runtimePlatform="RCP">
   <foreignModel>rpr.ecore</foreignModel>
   <genPackages prefix="Rpr" basePackage="com.sky.dis.om" disposableProviderFactory="true"
-      multipleEditorPages="false" ecorePackage="rpr.ecore#/">
+      ecorePackage="rpr.ecore#/">
     <genClasses ecoreClass="rpr.ecore#//World">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpr.ecore#//World/entities"/>
     </genClasses>
@@ -17,16 +17,18 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpr.ecore#//Entity/entityId"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpr.ecore#//Entity/worldLocation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rpr.ecore#//Entity/orientation"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//Entity/name"/>
     </genClasses>
     <genClasses ecoreClass="rpr.ecore#//EntityId">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//EntityId/site"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//EntityId/host"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//EntityId/entityId"/>
     </genClasses>
-    <genClasses ecoreClass="rpr.ecore#//WorldLocation">
+    <genClasses ecoreClass="rpr.ecore#//WorldLocation" labelFeature="#//rpr/WorldLocation/ecefString">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//WorldLocation/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//WorldLocation/y"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//WorldLocation/z"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//WorldLocation/ecefString"/>
     </genClasses>
     <genClasses ecoreClass="rpr.ecore#//Orientation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rpr.ecore#//Orientation/heading"/>

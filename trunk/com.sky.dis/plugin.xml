@@ -23,17 +23,23 @@
    <extension
          point="org.eclipse.ui.views">
       <category
-            id="com.sky.dis.category.view.world"
-            name="DIS World View">
+            id="com.sky.dis.category.view"
+            name="Sky">
       </category>
       <view
             allowMultiple="false"
-            category="com.sky.dis.category.view.world"
+            category="com.sky.dis.category.view"
             class="com.sky.dis.view.WorldView"
             icon="icons/sample.gif"
             id="com.sky.dis.view.WorldView"
             name="DIS World View"
             restorable="true">
+      </view>
+      <view
+            category="com.sky.dis.category.view"
+            class="com.sky.dis.view.EntitiesView"
+            id="com.sky.dis.view.EntitiesView"
+            name="Entities">
       </view>
    </extension>
    <extension

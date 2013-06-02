@@ -23,12 +23,10 @@ public class Scene {
 
         if (scene == null) {
             scene = new Scene();
+            World world = TheWorld.getInstance();
+            world.eAdapters().add(scene.worldListener);
         }
-
-        World world = TheWorld.getInstance();
-
-        world.eAdapters().add(scene.worldListener);
-
+        
         return scene;
     }
 

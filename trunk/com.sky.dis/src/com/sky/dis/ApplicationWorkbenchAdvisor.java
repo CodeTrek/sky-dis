@@ -8,6 +8,7 @@ import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 
 import com.sky.dis.control.DisControl;
 import com.sky.dis.model.EditingDomain;
+import com.sky.dis.model.ItemProvider;
 import com.sky.dis.model.TheWorld;
 import com.sky.dis.preferences.PreferenceConstants;
 import com.sky.dis.scene.Scene;
@@ -34,6 +35,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
         TheWorld.getInstance();
         EditingDomain.getInstance();
         Scene.getInstance();
+        ItemProvider.getInstance();
     }
 
     @Override

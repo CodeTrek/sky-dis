@@ -2,23 +2,19 @@
  */
 package com.sky.dis.om.rpr.impl;
 
-import com.sky.dis.om.rpr.Entity;
-import com.sky.dis.om.rpr.RprPackage;
-import com.sky.dis.om.rpr.World;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import com.sky.dis.om.rpr.Entity;
+import com.sky.dis.om.rpr.RprPackage;
+import com.sky.dis.om.rpr.World;
 
 /**
  * <!-- begin-user-doc -->

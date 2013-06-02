@@ -3,20 +3,13 @@
 package com.sky.dis.om.rpr.provider;
 
 
-import com.sky.dis.om.rpr.RprFactory;
-import com.sky.dis.om.rpr.RprPackage;
-import com.sky.dis.om.rpr.World;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -25,6 +18,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.sky.dis.om.rpr.RprFactory;
+import com.sky.dis.om.rpr.RprPackage;
+import com.sky.dis.om.rpr.World;
 
 /**
  * This is the item provider adapter for a {@link com.sky.dis.om.rpr.World} object.

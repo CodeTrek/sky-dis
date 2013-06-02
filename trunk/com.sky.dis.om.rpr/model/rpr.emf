@@ -9,6 +9,7 @@ class Entity {
   val EntityId[1] entityId;
   val WorldLocation[1] worldLocation;
   val Orientation[1] orientation;
+  readonly volatile transient derived attr String[1] name;
 }
 
 class EntityId {
@@ -21,6 +22,7 @@ class WorldLocation {
   attr double[1] x;
   attr double[1] y;
   attr double[1] z;
+  readonly volatile transient derived attr String[1] ecefString;
 }
 
 class Orientation {

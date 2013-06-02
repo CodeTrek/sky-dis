@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.sky.dis.om.rpr.Entity#getEntityId <em>Entity Id</em>}</li>
  *   <li>{@link com.sky.dis.om.rpr.Entity#getWorldLocation <em>World Location</em>}</li>
  *   <li>{@link com.sky.dis.om.rpr.Entity#getOrientation <em>Orientation</em>}</li>
+ *   <li>{@link com.sky.dis.om.rpr.Entity#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,5 +101,20 @@ public interface Entity extends EObject {
      * @generated
      */
     void setOrientation(Orientation value);
+
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Name</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see com.sky.dis.om.rpr.RprPackage#getEntity_Name()
+     * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+     * @generated
+     */
+    String getName();
 
 } // Entity

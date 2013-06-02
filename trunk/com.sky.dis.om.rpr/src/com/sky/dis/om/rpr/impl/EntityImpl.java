@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link com.sky.dis.om.rpr.impl.EntityImpl#getEntityId <em>Entity Id</em>}</li>
  *   <li>{@link com.sky.dis.om.rpr.impl.EntityImpl#getWorldLocation <em>World Location</em>}</li>
  *   <li>{@link com.sky.dis.om.rpr.impl.EntityImpl#getOrientation <em>Orientation</em>}</li>
+ *   <li>{@link com.sky.dis.om.rpr.impl.EntityImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +63,16 @@ public class EntityImpl extends EObjectImpl implements Entity {
      * @ordered
      */
     protected Orientation orientation;
+
+    /**
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAME_EDEFAULT = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -214,6 +225,24 @@ public class EntityImpl extends EObjectImpl implements Entity {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String getName() {
+       
+        EntityId id = getEntityId();
+        
+        if (id == null) {
+            return "unnamed";
+        }
+        
+        String name = id.getSite() + "." + id.getHost() + "." + id.getEntityId();
+        
+        return name;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -243,6 +272,8 @@ public class EntityImpl extends EObjectImpl implements Entity {
                 return getWorldLocation();
             case RprPackage.ENTITY__ORIENTATION:
                 return getOrientation();
+            case RprPackage.ENTITY__NAME:
+                return getName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -303,6 +334,8 @@ public class EntityImpl extends EObjectImpl implements Entity {
                 return worldLocation != null;
             case RprPackage.ENTITY__ORIENTATION:
                 return orientation != null;
+            case RprPackage.ENTITY__NAME:
+                return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
         }
         return super.eIsSet(featureID);
     }

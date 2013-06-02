@@ -121,13 +121,22 @@ public interface RprPackage extends EPackage {
     int ENTITY__ORIENTATION = 2;
 
     /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENTITY__NAME = 3;
+
+    /**
      * The number of structural features of the '<em>Entity</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ENTITY_FEATURE_COUNT = 3;
+    int ENTITY_FEATURE_COUNT = 4;
 
     /**
      * The meta object id for the '{@link com.sky.dis.om.rpr.impl.EntityIdImpl <em>Entity Id</em>}' class.
@@ -213,13 +222,22 @@ public interface RprPackage extends EPackage {
     int WORLD_LOCATION__Z = 2;
 
     /**
+     * The feature id for the '<em><b>Ecef String</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int WORLD_LOCATION__ECEF_STRING = 3;
+
+    /**
      * The number of structural features of the '<em>World Location</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int WORLD_LOCATION_FEATURE_COUNT = 3;
+    int WORLD_LOCATION_FEATURE_COUNT = 4;
 
     /**
      * The meta object id for the '{@link com.sky.dis.om.rpr.impl.OrientationImpl <em>Orientation</em>}' class.
@@ -333,6 +351,17 @@ public interface RprPackage extends EPackage {
     EReference getEntity_Orientation();
 
     /**
+     * Returns the meta object for the attribute '{@link com.sky.dis.om.rpr.Entity#getName <em>Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Name</em>'.
+     * @see com.sky.dis.om.rpr.Entity#getName()
+     * @see #getEntity()
+     * @generated
+     */
+    EAttribute getEntity_Name();
+
+    /**
      * Returns the meta object for class '{@link com.sky.dis.om.rpr.EntityId <em>Entity Id</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -417,6 +446,17 @@ public interface RprPackage extends EPackage {
      * @generated
      */
     EAttribute getWorldLocation_Z();
+
+    /**
+     * Returns the meta object for the attribute '{@link com.sky.dis.om.rpr.WorldLocation#getEcefString <em>Ecef String</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Ecef String</em>'.
+     * @see com.sky.dis.om.rpr.WorldLocation#getEcefString()
+     * @see #getWorldLocation()
+     * @generated
+     */
+    EAttribute getWorldLocation_EcefString();
 
     /**
      * Returns the meta object for class '{@link com.sky.dis.om.rpr.Orientation <em>Orientation</em>}'.
@@ -536,6 +576,14 @@ public interface RprPackage extends EPackage {
         EReference ENTITY__ORIENTATION = eINSTANCE.getEntity_Orientation();
 
         /**
+         * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
+
+        /**
          * The meta object literal for the '{@link com.sky.dis.om.rpr.impl.EntityIdImpl <em>Entity Id</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -602,6 +650,14 @@ public interface RprPackage extends EPackage {
          * @generated
          */
         EAttribute WORLD_LOCATION__Z = eINSTANCE.getWorldLocation_Z();
+
+        /**
+         * The meta object literal for the '<em><b>Ecef String</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute WORLD_LOCATION__ECEF_STRING = eINSTANCE.getWorldLocation_EcefString();
 
         /**
          * The meta object literal for the '{@link com.sky.dis.om.rpr.impl.OrientationImpl <em>Orientation</em>}' class.

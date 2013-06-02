@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link com.sky.dis.om.rpr.impl.WorldLocationImpl#getX <em>X</em>}</li>
  *   <li>{@link com.sky.dis.om.rpr.impl.WorldLocationImpl#getY <em>Y</em>}</li>
  *   <li>{@link com.sky.dis.om.rpr.impl.WorldLocationImpl#getZ <em>Z</em>}</li>
+ *   <li>{@link com.sky.dis.om.rpr.impl.WorldLocationImpl#getEcefString <em>Ecef String</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,6 +88,16 @@ public class WorldLocationImpl extends EObjectImpl implements WorldLocation {
      * @ordered
      */
     protected double z = Z_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getEcefString() <em>Ecef String</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getEcefString()
+     * @generated
+     * @ordered
+     */
+    protected static final String ECEF_STRING_EDEFAULT = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -175,6 +186,16 @@ public class WorldLocationImpl extends EObjectImpl implements WorldLocation {
      * <!-- end-user-doc -->
      * @generated
      */
+    public String getEcefString() {
+        String value = String.format("(%.3f, %.3f, %.3f)", getX(), getY(), getZ());
+        return value;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
@@ -184,6 +205,8 @@ public class WorldLocationImpl extends EObjectImpl implements WorldLocation {
                 return getY();
             case RprPackage.WORLD_LOCATION__Z:
                 return getZ();
+            case RprPackage.WORLD_LOCATION__ECEF_STRING:
+                return getEcefString();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -244,6 +267,8 @@ public class WorldLocationImpl extends EObjectImpl implements WorldLocation {
                 return y != Y_EDEFAULT;
             case RprPackage.WORLD_LOCATION__Z:
                 return z != Z_EDEFAULT;
+            case RprPackage.WORLD_LOCATION__ECEF_STRING:
+                return ECEF_STRING_EDEFAULT == null ? getEcefString() != null : !ECEF_STRING_EDEFAULT.equals(getEcefString());
         }
         return super.eIsSet(featureID);
     }
