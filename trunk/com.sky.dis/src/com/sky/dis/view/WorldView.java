@@ -17,11 +17,9 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
 
-public class WorldView extends ViewPart {
+import com.sky.dis.scene.Scene;
 
-    /**
-     * The ID of the view as specified by the extension.
-     */
+public class WorldView extends ViewPart {
     public static final String ID = "com.sky.dis.view.WorldView";
 
     private Composite viewComposite = null;
@@ -54,13 +52,7 @@ public class WorldView extends ViewPart {
 
         LatLonGraticuleLayer llaLayer = new LatLonGraticuleLayer();
         llaLayer.setEnabled(false);
-
         m.getLayers().add(llaLayer);
-
-        // Add the layer manager layer to the model layer list
-        LayerManagerLayer layerManager = new LayerManagerLayer(worldCanvas);
-        layerManager.setEnabled(false);
-        m.getLayers().add(layerManager);
 
         worldCanvas.setModel(m);
 
@@ -73,6 +65,22 @@ public class WorldView extends ViewPart {
         statusBar.setEventSource(worldCanvas);
 
         parent.setLayoutData(new GridData(GridData.FILL_BOTH));
+       
+        // Add the scene to the world view.
+        Scene.getInstance().addToWorldView(worldCanvas);
+
+        // Add the layer manager layer to the model layer list
+        LayerManagerLayer layerManager = new LayerManagerLayer(worldCanvas);
+        layerManager.setEnabled(false);
+        m.getLayers().add(layerManager);
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+
+        // Remove the scene from the world.
+        Scene.getInstance().removeFromWorldView();
     }
 
     /**

@@ -9,6 +9,8 @@ import java.net.SocketTimeoutException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.BlockingQueue;
 
+import com.sky.dis.Activator;
+
 import edu.nps.moves.dis.FastEntityStatePdu;
 import edu.nps.moves.dis.Pdu;
 import edu.nps.moves.disenum.PduType;
@@ -23,16 +25,50 @@ public class DisIoRunnable extends WorkerRunnable {
     private PduFactory pduFactory;
     private int port;
     private DatagramSocket socket = null;
-    
+
     DisIoRunnable(int port, BlockingQueue<DisPduEvent> eventQueue) {
         this.port = port;
         this.eventQueue = eventQueue;
     }
-    
+
+    @Override
+    public void run() {
+        while (isEnabled()) {
+            try {
+                socket.receive(packet);
+            } catch (SocketTimeoutException e) {
+                continue;
+            } catch (IOException e) {
+                // TODO: Send exception message to the data processor.
+                Activator.getDefault().logException(e);
+                break;
+            }
+
+            ByteBuffer byteBuffer = ByteBuffer.wrap(packet.getData());
+            Pdu pdu = pduFactory.createPdu(byteBuffer);
+
+            // Not a recognized PDU?
+            if (pdu == null) {
+                continue;
+            }
+
+            // Not an entity state PDU?
+            if (!isEntityStatePdu(pdu)) {
+                continue;
+            }
+
+            // Notify the client.
+            eventQueue.offer(new EntityStateEvent((FastEntityStatePdu) pdu));
+        }
+
+        socket.close();
+        socket = null;
+    }
+
     private boolean isEntityStatePdu(Pdu pdu) {
         return (pdu.getPduType() == PduType.ENTITY_STATE.value);
     }
-    
+
     @Override
     void postRun() {
         packet = null;
@@ -56,40 +92,7 @@ public class DisIoRunnable extends WorkerRunnable {
         pduFactory = new PduFactory(true);
         byte[] buffer = new byte[MAX_PDU_SIZE_BYTES];
         packet = new DatagramPacket(buffer, buffer.length);
-        
+
         return true;
-    }
-
-    @Override
-    public void run() {
-        while (isEnabled()) {
-            try {
-                socket.receive(packet);
-            } catch (SocketTimeoutException e) {
-                continue;
-            } catch (IOException e) {
-                // TODO: Send exception message to the data processor.
-                break;
-            }
-
-            ByteBuffer byteBuffer = ByteBuffer.wrap(packet.getData());
-            Pdu pdu = pduFactory.createPdu(byteBuffer);
-
-            // Not a recognized PDU?
-            if (pdu == null) {
-                continue;
-            }
-
-            // Not an entity state PDU?
-            if (!isEntityStatePdu(pdu)) {
-                continue;
-            }
-
-            // Notify the client.
-            eventQueue.offer(new EntityStateEvent((FastEntityStatePdu) pdu));
-        }
-
-        socket.close();
-        socket = null;
     }
 }

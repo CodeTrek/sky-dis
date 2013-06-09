@@ -1,7 +1,16 @@
+/*
+    Copyright (c) 2013 Jay Graham
+
+    Distributed under the MIT License (see accompanying file LICENSE_1_0_0.txt
+    or http://www.opensource.org/licenses/mit-license.php)
+ */
+
 package com.sky.dis;
 
 import java.util.Vector;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.console.ConsolePlugin;
 import org.eclipse.ui.console.IConsole;
@@ -12,17 +21,18 @@ import org.osgi.framework.BundleContext;
 
 import com.sky.dis.cmd.IStateDrivenItem;
 
-
 /**
  * The activator class controls the plug-in life cycle
  */
 public class Activator extends AbstractUIPlugin {
 
+    // The plug-in ID
+    public static final String PLUGIN_ID = "com.sky.dis";
+
     // The shared instance
     private static Activator plugin;
 
-    // The plug-in ID
-    public static final String PLUGIN_ID = "com.sky.dis"; //$NON-NLS-1$
+    private static final String UNEXPECTED_EXCEPTION = "unexpected exception";
 
     /**
      * Returns the shared instance
@@ -64,6 +74,18 @@ public class Activator extends AbstractUIPlugin {
 
     public MessageConsoleStream getMessageConsoleStream() {
         return messageStream;
+    }
+
+    public void logException(Throwable e) {
+        getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, UNEXPECTED_EXCEPTION, e));
+    }
+
+    public void logInfo(String msg) {
+        getLog().log(new Status(IStatus.INFO, PLUGIN_ID, msg));
+    }
+
+    public void logWarning(String msg) {
+        getLog().log(new Status(IStatus.WARNING, PLUGIN_ID, msg));
     }
 
     public void removeStateDrivenItem(IStateDrivenItem item) {

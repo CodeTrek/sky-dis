@@ -11,6 +11,7 @@ import org.eclipse.emf.transaction.RollbackException;
 import org.eclipse.emf.transaction.TransactionalCommandStack;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
+import com.sky.dis.Activator;
 import com.sky.dis.model.EditingDomain;
 import com.sky.dis.model.Query;
 import com.sky.dis.model.TheWorld;
@@ -29,6 +30,22 @@ public class DisPduToRprModelAdapter extends WorkerRunnable {
 
     public DisPduToRprModelAdapter(BlockingQueue<DisPduEvent> eventQueue) {
         this.eventQueue = eventQueue;
+    }
+
+    @Override
+    public void run() {
+        while (isEnabled()) {
+            EntityStateEvent pduEvent = null;
+            try {
+                pduEvent = (EntityStateEvent) eventQueue.poll(TIME_OUT_MS, TimeUnit.MILLISECONDS);
+            } catch (InterruptedException e) {
+                break;
+            }
+            if (pduEvent != null) {
+                FastEntityStatePdu pdu = pduEvent.getPdu();
+                handlePduEvent(pdu);
+            }
+        }
     }
 
     private void handlePduEvent(FastEntityStatePdu pdu) {
@@ -61,37 +78,12 @@ public class DisPduToRprModelAdapter extends WorkerRunnable {
             try {
                 tstack.execute(cmd, Collections.EMPTY_MAP);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Activator.getDefault().logException(e);
             } catch (RollbackException e) {
-                e.printStackTrace();
+                Activator.getDefault().logException(e);
             }
 
             ed.getCommandStack().flush();
-        }
-    }
-
-    @Override
-    void postRun() {
-    }
-
-    @Override
-    boolean preRun() {
-        return true;
-    }
-
-    @Override
-    public void run() {
-        while (isEnabled()) {
-            EntityStateEvent pduEvent = null;
-            try {
-                pduEvent = (EntityStateEvent) eventQueue.poll(TIME_OUT_MS, TimeUnit.MILLISECONDS);
-            } catch (InterruptedException e) {
-                break;
-            }
-            if (pduEvent != null) {
-                FastEntityStatePdu pdu = pduEvent.getPdu();
-                handlePduEvent(pdu);
-            }
         }
     }
 
@@ -116,9 +108,9 @@ public class DisPduToRprModelAdapter extends WorkerRunnable {
             try {
                 tstack.execute(setWorldLocation, Collections.EMPTY_MAP);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Activator.getDefault().logException(e);
             } catch (RollbackException e) {
-                e.printStackTrace();
+                Activator.getDefault().logException(e);
             }
         }
 
@@ -126,10 +118,19 @@ public class DisPduToRprModelAdapter extends WorkerRunnable {
             try {
                 tstack.execute(setOrientation, Collections.EMPTY_MAP);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Activator.getDefault().logException(e);
             } catch (RollbackException e) {
-                e.printStackTrace();
+                Activator.getDefault().logException(e);
             }
         }
+    }
+
+    @Override
+    void postRun() {
+    }
+
+    @Override
+    boolean preRun() {
+        return true;
     }
 }
