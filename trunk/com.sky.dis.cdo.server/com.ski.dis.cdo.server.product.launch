@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.EquinoxLauncher">
+<booleanAttribute key="append.args" value="true"/>
+<booleanAttribute key="automaticAdd" value="false"/>
+<booleanAttribute key="automaticValidate" value="false"/>
+<stringAttribute key="bootstrap" value=""/>
+<booleanAttribute key="clearConfig" value="false"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/code.jcg.emf.cdo.server.product"/>
+<booleanAttribute key="default" value="true"/>
+<booleanAttribute key="default_auto_start" value="true"/>
+<intAttribute key="default_start_level" value="4"/>
+<booleanAttribute key="includeOptional" value="false"/>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console&#13;&#10;-debug&#13;&#10;-console"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Declipse.ignoreApp=false&#13;&#10;-Dosgi.noShutdown=true&#13;&#10;-Declipse.application=org.eclipse.emf.cdo.server.app&#13;&#10;-Xms40m&#13;&#10;-Xmx1024m&#13;&#10;-Ddebug=true&#13;&#10;-Dnet4j.config=&quot;${project_loc:/com.sky.dis.cdo.server}/config&quot;&#13;&#10;-Dorg.eclipse.emf.cdo.server.browser.port=7777&#13;&#10;-Dosgi.console.enable.builtin=true&#13;&#10;-Dosgi.debug=true&#13;&#10;-Dosgi.clean=true"/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:com.sky.dis.cdo.server}"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<booleanAttribute key="show_selected_only" value="false"/>
+<stringAttribute key="target_bundles" value="com.ibm.icu@default:default,javax.xml@default:default,org.eclipse.ant.core@default:default,org.eclipse.compare.core@default:default,org.eclipse.core.contenttype@default:default,org.eclipse.core.expressions@default:default,org.eclipse.core.filesystem.win32.x86@default:false,org.eclipse.core.filesystem@default:default,org.eclipse.core.jobs@default:default,org.eclipse.core.resources.win32.x86@default:false,org.eclipse.core.resources@default:default,org.eclipse.core.runtime.compatibility.registry@default:false,org.eclipse.core.runtime@default:true,org.eclipse.core.variables@default:default,org.eclipse.emf.cdo.common@default:default,org.eclipse.emf.cdo.ecore.retrofit@default:false,org.eclipse.emf.cdo.server.admin@default:default,org.eclipse.emf.cdo.server.db@default:default,org.eclipse.emf.cdo.server.net4j@default:default,org.eclipse.emf.cdo.server@default:default,org.eclipse.emf.cdo@default:default,org.eclipse.emf.common@default:default,org.eclipse.emf.ecore.change@default:default,org.eclipse.emf.ecore.xmi@default:default,org.eclipse.emf.ecore@default:default,org.eclipse.equinox.app@default:default,org.eclipse.equinox.common@2:true,org.eclipse.equinox.preferences@default:default,org.eclipse.equinox.registry@default:default,org.eclipse.net4j.db.h2@default:default,org.eclipse.net4j.db@default:default,org.eclipse.net4j.tcp@default:default,org.eclipse.net4j.util@default:default,org.eclipse.net4j@default:default,org.eclipse.osgi@-1:true,org.eclipse.team.core@default:default,org.h2@default:default"/>
+<booleanAttribute key="tracing" value="true"/>
+<booleanAttribute key="useCustomFeatures" value="false"/>
+<booleanAttribute key="useDefaultConfigArea" value="true"/>
+<stringAttribute key="workspace_bundles" value="com.sky.dis.cdo.server@default:default"/>
+</launchConfiguration>
