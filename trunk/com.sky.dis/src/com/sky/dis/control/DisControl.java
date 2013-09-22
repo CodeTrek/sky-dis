@@ -11,12 +11,12 @@ public class DisControl {
 
         return disControl;
     }
-    
+
     public static void postStartup(int port) {
         disControl = getInstance();
         disControl.init(port);
     }
-    
+
     public static void preShutdown() {
         if (disControl == null) {
             return;
